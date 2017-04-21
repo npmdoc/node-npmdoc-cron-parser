@@ -1,0 +1,2425 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >cron-parser (v2.4.0)</a>
+</h1>
+<h4>Node.js library for parsing crontab instructions</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cron-parser">module cron-parser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.cron-parser">
+            function <span class="apidocSignatureSpan"></span>cron-parser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser._parseEntry">
+            function <span class="apidocSignatureSpan">cron-parser.</span>_parseEntry
+            <span class="apidocSignatureSpan">(entry)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date">
+            function <span class="apidocSignatureSpan">cron-parser.</span>date
+            <span class="apidocSignatureSpan">(timestamp, tz)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.expression">
+            function <span class="apidocSignatureSpan">cron-parser.</span>expression
+            <span class="apidocSignatureSpan">(fields, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.parseExpression">
+            function <span class="apidocSignatureSpan">cron-parser.</span>parseExpression
+            <span class="apidocSignatureSpan">(expression, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.parseFile">
+            function <span class="apidocSignatureSpan">cron-parser.</span>parseFile
+            <span class="apidocSignatureSpan">(filePath, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.parseString">
+            function <span class="apidocSignatureSpan">cron-parser.</span>parseString
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cron-parser.</span>date.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cron-parser.</span>expression.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cron-parser.date">module cron-parser.date</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.date">
+            function <span class="apidocSignatureSpan">cron-parser.</span>date
+            <span class="apidocSignatureSpan">(timestamp, tz)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cron-parser.date.prototype">module cron-parser.date.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype._getUTC">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>_getUTC
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.addDay">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>addDay
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.addHour">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>addHour
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.addMinute">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>addMinute
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.addMonth">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>addMonth
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.addSecond">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>addSecond
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.addYear">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>addYear
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.getDate">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getDate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.getDay">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getDay
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.getFullYear">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getFullYear
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.getHours">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getHours
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.getMinutes">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getMinutes
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.getMonth">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getMonth
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.getSeconds">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getSeconds
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.getTime">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getTime
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.getUTCDate">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getUTCDate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.getUTCDay">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getUTCDay
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.getUTCFullYear">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getUTCFullYear
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.getUTCHours">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getUTCHours
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.getUTCMinutes">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getUTCMinutes
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.getUTCMonth">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getUTCMonth
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.getUTCSeconds">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getUTCSeconds
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.setDate">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>setDate
+            <span class="apidocSignatureSpan">(d)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.setDay">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>setDay
+            <span class="apidocSignatureSpan">(d)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.setFullYear">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>setFullYear
+            <span class="apidocSignatureSpan">(y)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.setHours">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>setHours
+            <span class="apidocSignatureSpan">(h)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.setMinutes">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>setMinutes
+            <span class="apidocSignatureSpan">(m)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.setMonth">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>setMonth
+            <span class="apidocSignatureSpan">(m)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.setSeconds">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>setSeconds
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.subtractDay">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>subtractDay
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.subtractHour">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>subtractHour
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.subtractMinute">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>subtractMinute
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.subtractMonth">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>subtractMonth
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.subtractSecond">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>subtractSecond
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.subtractYear">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>subtractYear
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.toDate">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>toDate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.toISOString">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>toISOString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.toJSON">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.date.prototype.toString">
+            function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cron-parser.expression">module cron-parser.expression</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.expression.expression">
+            function <span class="apidocSignatureSpan">cron-parser.</span>expression
+            <span class="apidocSignatureSpan">(fields, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.expression._parseField">
+            function <span class="apidocSignatureSpan">cron-parser.expression.</span>_parseField
+            <span class="apidocSignatureSpan">(field, value, constraints)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.expression.parse">
+            function <span class="apidocSignatureSpan">cron-parser.expression.</span>parse
+            <span class="apidocSignatureSpan">(expression, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cron-parser.expression.</span>aliases</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cron-parser.expression.</span>constraints</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cron-parser.expression.</span>daysInMonth</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cron-parser.expression.</span>map</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cron-parser.expression.</span>parseDefaults</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cron-parser.expression.</span>predefined</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cron-parser.expression.prototype">module cron-parser.expression.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.expression.prototype._applyTimezoneShift">
+            function <span class="apidocSignatureSpan">cron-parser.expression.prototype.</span>_applyTimezoneShift
+            <span class="apidocSignatureSpan">(currentDate, method)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.expression.prototype._findSchedule">
+            function <span class="apidocSignatureSpan">cron-parser.expression.prototype.</span>_findSchedule
+            <span class="apidocSignatureSpan">(reverse)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.expression.prototype.hasNext">
+            function <span class="apidocSignatureSpan">cron-parser.expression.prototype.</span>hasNext
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.expression.prototype.hasPrev">
+            function <span class="apidocSignatureSpan">cron-parser.expression.prototype.</span>hasPrev
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.expression.prototype.iterate">
+            function <span class="apidocSignatureSpan">cron-parser.expression.prototype.</span>iterate
+            <span class="apidocSignatureSpan">(steps, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.expression.prototype.next">
+            function <span class="apidocSignatureSpan">cron-parser.expression.prototype.</span>next
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.expression.prototype.prev">
+            function <span class="apidocSignatureSpan">cron-parser.expression.prototype.</span>prev
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cron-parser.expression.prototype.reset">
+            function <span class="apidocSignatureSpan">cron-parser.expression.prototype.</span>reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cron-parser" id="apidoc.module.cron-parser">module cron-parser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.cron-parser" id="apidoc.element.cron-parser.cron-parser">
+        function <span class="apidocSignatureSpan"></span>cron-parser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CronParser() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser._parseEntry" id="apidoc.element.cron-parser._parseEntry">
+        function <span class="apidocSignatureSpan">cron-parser.</span>_parseEntry
+        <span class="apidocSignatureSpan">(entry)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _parseEntry(entry) {
+  var atoms = entry.split(&#x27; &#x27;);
+
+  if (atoms.length === 6) {
+    return {
+      interval: CronExpression.parse(entry)
+    };
+  } else if (atoms.length &#x3e; 6) {
+    return {
+      interval: CronExpression.parse(entry),
+      command: atoms.slice(6, atoms.length)
+    };
+  } else {
+    throw new Error(&#x27;Invalid entry: &#x27; + entry);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date" id="apidoc.element.cron-parser.date">
+        function <span class="apidocSignatureSpan">cron-parser.</span>date
+        <span class="apidocSignatureSpan">(timestamp, tz)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CronDate(timestamp, tz) {
+  if (timestamp instanceof CronDate) {
+    timestamp = timestamp._date;
+  }
+
+  if (!tz) {
+    this._date = moment(timestamp);
+  } else {
+    this._date = moment.tz(timestamp, tz);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this._date.subtract(1, &#x27;second&#x27;).startOf(&#x27;second&#x27;);
+  if (this.getTime() &#x3e; prev) {
+    this._date.subtract(1, &#x27;hour&#x27;);
+  }
+};
+
+CronDate.prototype.getDate = function() {
+  return this._date.<span class="apidocCodeKeywordSpan">date</span>();
+};
+
+CronDate.prototype.getFullYear = function() {
+  return this._date.year();
+};
+
+CronDate.prototype.getDay = function() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.expression" id="apidoc.element.cron-parser.expression">
+        function <span class="apidocSignatureSpan">cron-parser.</span>expression
+        <span class="apidocSignatureSpan">(fields, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CronExpression(fields, options) {
+  this._options = options;
+  this._tz = options.tz;
+  this._currentDate = new CronDate(options.currentDate, this._tz);
+  this._startDate = options.startDate ? new CronDate(options.startDate, this._tz) : null;
+  this._endDate = options.endDate ? new CronDate(options.endDate, this._tz) : null;
+  this._fields = {};
+  this._isIterator = options.iterator || false;
+  this._hasIterated = false;
+  this._utc = options.utc || false;
+
+  // Map fields
+  for (var i = 0, c = CronExpression.map.length; i &#x3c; c; i++) {
+    var key = CronExpression.map[i];
+    this._fields[key] = fields[i];
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.parseExpression" id="apidoc.element.cron-parser.parseExpression">
+        function <span class="apidocSignatureSpan">cron-parser.</span>parseExpression
+        <span class="apidocSignatureSpan">(expression, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parseExpression(expression, options, callback) {
+  return CronExpression.parse(expression, options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Simple expression.
+
+```javascript
+var parser = require(&#x27;cron-parser&#x27;);
+
+try {
+  var interval = parser.<span class="apidocCodeKeywordSpan">parseExpression</span>(&#x27;*/2 * * * *&#x27;);
+
+  console.log(&#x27;Date: &#x27;, interval.next().toString()); // Sat Dec 29 2012 00:42:00 GMT+0200 (EET)
+  console.log(&#x27;Date: &#x27;, interval.next().toString()); // Sat Dec 29 2012 00:44:00 GMT+0200 (EET)
+
+  console.log(&#x27;Date: &#x27;, interval.prev().toString()); // Sat Dec 29 2012 00:42:00 GMT+0200 (EET)
+  console.log(&#x27;Date: &#x27;, interval.prev().toString()); // Sat Dec 29 2012 00:40:00 GMT+0200 (EET)
+} catch (err) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.parseFile" id="apidoc.element.cron-parser.parseFile">
+        function <span class="apidocSignatureSpan">cron-parser.</span>parseFile
+        <span class="apidocSignatureSpan">(filePath, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parseFile(filePath, callback) {
+  require(&#x27;fs&#x27;).readFile(filePath, function(err, data) {
+    if (err) {
+      callback(err);
+      return;
+    }
+
+    return callback(null, CronParser.parseString(data.toString()));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.parseString" id="apidoc.element.cron-parser.parseString">
+        function <span class="apidocSignatureSpan">cron-parser.</span>parseString
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parseString(data) {
+  var self = this;
+  var blocks = data.split(&#x27;\n&#x27;);
+
+  var response = {
+    variables: {},
+    expressions: [],
+    errors: {}
+  };
+
+  for (var i = 0, c = blocks.length; i &#x3c; c; i++) {
+    var block = blocks[i];
+    var matches = null;
+    var entry = block.replace(/^\s+|\s+$/g, &#x27;&#x27;); // Remove surrounding spaces
+
+    if (entry.length &#x3e; 0) {
+      if (entry.match(/^#/)) { // Comment
+        continue;
+      } else if ((matches = entry.match(/^(.*)=(.*)$/))) { // Variable
+        response.variables[matches[1]] = matches[2];
+      } else { // Expression?
+        var result = null;
+
+        try {
+          result = self._parseEntry(&#x27;0 &#x27; + entry);
+          response.expressions.push(result.interval);
+        } catch (err) {
+          response.errors[entry] = err;
+        }
+      }
+    }
+  }
+
+  return response;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cron-parser.date" id="apidoc.module.cron-parser.date">module cron-parser.date</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.date" id="apidoc.element.cron-parser.date.date">
+        function <span class="apidocSignatureSpan">cron-parser.</span>date
+        <span class="apidocSignatureSpan">(timestamp, tz)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CronDate(timestamp, tz) {
+  if (timestamp instanceof CronDate) {
+    timestamp = timestamp._date;
+  }
+
+  if (!tz) {
+    this._date = moment(timestamp);
+  } else {
+    this._date = moment.tz(timestamp, tz);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this._date.subtract(1, &#x27;second&#x27;).startOf(&#x27;second&#x27;);
+  if (this.getTime() &#x3e; prev) {
+    this._date.subtract(1, &#x27;hour&#x27;);
+  }
+};
+
+CronDate.prototype.getDate = function() {
+  return this._date.<span class="apidocCodeKeywordSpan">date</span>();
+};
+
+CronDate.prototype.getFullYear = function() {
+  return this._date.year();
+};
+
+CronDate.prototype.getDay = function() {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cron-parser.date.prototype" id="apidoc.module.cron-parser.date.prototype">module cron-parser.date.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype._getUTC" id="apidoc.element.cron-parser.date.prototype._getUTC">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>_getUTC
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getUTC = function () {
+  return moment.utc(this._date);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+CronDate.prototype.getTime = function() {
+  return this._date.valueOf();
+};
+
+CronDate.prototype.getUTCDate = function() {
+  return this.<span class="apidocCodeKeywordSpan">_getUTC</span>().date();
+};
+
+CronDate.prototype.getUTCFullYear = function() {
+  return this._getUTC().year();
+};
+
+CronDate.prototype.getUTCDay = function() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.addDay" id="apidoc.element.cron-parser.date.prototype.addDay">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>addDay
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addDay = function () {
+  this._date.add(1, &#x27;day&#x27;).startOf(&#x27;day&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.addHour" id="apidoc.element.cron-parser.date.prototype.addHour">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>addHour
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addHour = function () {
+  var prev = this.getTime();
+  this._date.add(1, &#x27;hour&#x27;).startOf(&#x27;hour&#x27;);
+  if (this.getTime() &#x3c;= prev) {
+    this._date.add(1, &#x27;hour&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.addMinute" id="apidoc.element.cron-parser.date.prototype.addMinute">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>addMinute
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addMinute = function () {
+  var prev = this.getTime();
+  this._date.add(1, &#x27;minute&#x27;).startOf(&#x27;minute&#x27;);
+  if (this.getTime() &#x3c; prev) {
+    this._date.add(1, &#x27;hour&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.addMonth" id="apidoc.element.cron-parser.date.prototype.addMonth">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>addMonth
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addMonth = function () {
+  this._date.add(1, &#x27;month&#x27;).startOf(&#x27;month&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.addSecond" id="apidoc.element.cron-parser.date.prototype.addSecond">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>addSecond
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addSecond = function () {
+  var prev = this.getTime();
+  this._date.add(1, &#x27;second&#x27;).startOf(&#x27;second&#x27;);
+  if (this.getTime() &#x3c; prev) {
+    this._date.add(1, &#x27;hour&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.addYear" id="apidoc.element.cron-parser.date.prototype.addYear">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>addYear
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addYear = function () {
+  this._date.add(1, &#x27;year&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.getDate" id="apidoc.element.cron-parser.date.prototype.getDate">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getDate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDate = function () {
+  return this._date.date();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.getDay" id="apidoc.element.cron-parser.date.prototype.getDay">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getDay
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDay = function () {
+  return this._date.day();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.getFullYear" id="apidoc.element.cron-parser.date.prototype.getFullYear">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getFullYear
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getFullYear = function () {
+  return this._date.year();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.getHours" id="apidoc.element.cron-parser.date.prototype.getHours">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getHours
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getHours = function () {
+  return this._date.hours();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return +val;
+}
+
+return parseSequence(value);
+};
+
+CronExpression.prototype._applyTimezoneShift = function(currentDate, method) {
+var previousHour = currentDate.<span class="apidocCodeKeywordSpan">getHours</span>();
+currentDate[method]();
+var currentHour = currentDate.getHours();
+var diff = currentHour - previousHour;
+if (diff === 2) {
+  // Starting DST
+  if (this._fields.hour.length !== 24) {
+    // Hour is specified
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.getMinutes" id="apidoc.element.cron-parser.date.prototype.getMinutes">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getMinutes
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getMinutes = function () {
+  return this._date.minute();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (diff === 2) {
+  // Starting DST
+  if (this._fields.hour.length !== 24) {
+    // Hour is specified
+    this._dstStart = currentHour;
+  }
+} else if ((diff === 0) &#x26;&#x26;
+           (currentDate.<span class="apidocCodeKeywordSpan">getMinutes</span>() === 0) &#x26;&#x26;
+           (currentDate.getSeconds() === 0)) {
+  // Ending DST
+  if (this._fields.hour.length !== 24) {
+    // Hour is specified
+    this._dstEnd = currentHour;
+  }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.getMonth" id="apidoc.element.cron-parser.date.prototype.getMonth">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getMonth
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getMonth = function () {
+  return this._date.month();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.getSeconds" id="apidoc.element.cron-parser.date.prototype.getSeconds">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getSeconds
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSeconds = function () {
+  return this._date.second();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    // Starting DST
+    if (this._fields.hour.length !== 24) {
+      // Hour is specified
+      this._dstStart = currentHour;
+    }
+  } else if ((diff === 0) &#x26;&#x26;
+             (currentDate.getMinutes() === 0) &#x26;&#x26;
+             (currentDate.<span class="apidocCodeKeywordSpan">getSeconds</span>() === 0)) {
+    // Ending DST
+    if (this._fields.hour.length !== 24) {
+      // Hour is specified
+      this._dstEnd = currentHour;
+    }
+  }
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.getTime" id="apidoc.element.cron-parser.date.prototype.getTime">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getTime
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getTime = function () {
+  return this._date.valueOf();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+CronDate.prototype.addDay = function() {
+  this._date.add(1, &#x27;day&#x27;).startOf(&#x27;day&#x27;);
+};
+
+CronDate.prototype.addHour = function() {
+  var prev = this.<span class="apidocCodeKeywordSpan">getTime</span>();
+  this._date.add(1, &#x27;hour&#x27;).startOf(&#x27;hour&#x27;);
+  if (this.getTime() &#x3c;= prev) {
+    this._date.add(1, &#x27;hour&#x27;);
+  }
+};
+
+CronDate.prototype.addMinute = function() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.getUTCDate" id="apidoc.element.cron-parser.date.prototype.getUTCDate">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getUTCDate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getUTCDate = function () {
+  return this._getUTC().date();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.getUTCDay" id="apidoc.element.cron-parser.date.prototype.getUTCDay">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getUTCDay
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getUTCDay = function () {
+  return this._getUTC().day();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.getUTCFullYear" id="apidoc.element.cron-parser.date.prototype.getUTCFullYear">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getUTCFullYear
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getUTCFullYear = function () {
+  return this._getUTC().year();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.getUTCHours" id="apidoc.element.cron-parser.date.prototype.getUTCHours">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getUTCHours
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getUTCHours = function () {
+  return this._getUTC().hours();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.getUTCMinutes" id="apidoc.element.cron-parser.date.prototype.getUTCMinutes">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getUTCMinutes
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getUTCMinutes = function () {
+  return this._getUTC().minute();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.getUTCMonth" id="apidoc.element.cron-parser.date.prototype.getUTCMonth">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getUTCMonth
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getUTCMonth = function () {
+  return this._getUTC().month();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.getUTCSeconds" id="apidoc.element.cron-parser.date.prototype.getUTCSeconds">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>getUTCSeconds
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getUTCSeconds = function () {
+  return this._getUTC().second();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.setDate" id="apidoc.element.cron-parser.date.prototype.setDate">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>setDate
+        <span class="apidocSignatureSpan">(d)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setDate = function (d) {
+  return this._date.date(d);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.setDay" id="apidoc.element.cron-parser.date.prototype.setDay">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>setDay
+        <span class="apidocSignatureSpan">(d)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setDay = function (d) {
+  return this._date.day(d);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.setFullYear" id="apidoc.element.cron-parser.date.prototype.setFullYear">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>setFullYear
+        <span class="apidocSignatureSpan">(y)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setFullYear = function (y) {
+  return this._date.year(y);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.setHours" id="apidoc.element.cron-parser.date.prototype.setHours">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>setHours
+        <span class="apidocSignatureSpan">(h)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setHours = function (h) {
+  return this._date.hour(h);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.setMinutes" id="apidoc.element.cron-parser.date.prototype.setMinutes">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>setMinutes
+        <span class="apidocSignatureSpan">(m)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setMinutes = function (m) {
+  return this._date.minute(m);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.setMonth" id="apidoc.element.cron-parser.date.prototype.setMonth">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>setMonth
+        <span class="apidocSignatureSpan">(m)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setMonth = function (m) {
+  return this._date.month(m);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.setSeconds" id="apidoc.element.cron-parser.date.prototype.setSeconds">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>setSeconds
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setSeconds = function (s) {
+  return this._date.second(s);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.subtractDay" id="apidoc.element.cron-parser.date.prototype.subtractDay">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>subtractDay
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">subtractDay = function () {
+  this._date.subtract(1, &#x27;day&#x27;).endOf(&#x27;day&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.subtractHour" id="apidoc.element.cron-parser.date.prototype.subtractHour">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>subtractHour
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">subtractHour = function () {
+  var prev = this.getTime();
+  this._date.subtract(1, &#x27;hour&#x27;).endOf(&#x27;hour&#x27;);
+  if (this.getTime() &#x3e;= prev) {
+    this._date.subtract(1, &#x27;hour&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.subtractMinute" id="apidoc.element.cron-parser.date.prototype.subtractMinute">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>subtractMinute
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">subtractMinute = function () {
+  var prev = this.getTime();
+  this._date.subtract(1, &#x27;minute&#x27;).endOf(&#x27;minute&#x27;);
+  if (this.getTime() &#x3e; prev) {
+    this._date.subtract(1, &#x27;hour&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.subtractMonth" id="apidoc.element.cron-parser.date.prototype.subtractMonth">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>subtractMonth
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">subtractMonth = function () {
+  this._date.subtract(1, &#x27;month&#x27;).endOf(&#x27;month&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.subtractSecond" id="apidoc.element.cron-parser.date.prototype.subtractSecond">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>subtractSecond
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">subtractSecond = function () {
+  var prev = this.getTime();
+  this._date.subtract(1, &#x27;second&#x27;).startOf(&#x27;second&#x27;);
+  if (this.getTime() &#x3e; prev) {
+    this._date.subtract(1, &#x27;hour&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.subtractYear" id="apidoc.element.cron-parser.date.prototype.subtractYear">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>subtractYear
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">subtractYear = function () {
+  this._date.subtract(1, &#x27;year&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.toDate" id="apidoc.element.cron-parser.date.prototype.toDate">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>toDate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toDate = function () {
+  return this._date.toDate();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+CronDate.prototype.toString = function() {
+return this._date.toString();
+};
+
+CronDate.prototype.toDate = function() {
+return this._date.<span class="apidocCodeKeywordSpan">toDate</span>();
+};
+
+function CronDate (timestamp, tz) {
+if (timestamp instanceof CronDate) {
+  timestamp = timestamp._date;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.toISOString" id="apidoc.element.cron-parser.date.prototype.toISOString">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>toISOString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toISOString = function () {
+  return this._date.toISOString();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+CronDate.prototype.getUTCSeconds = function() {
+  return this._getUTC().second();
+};
+
+CronDate.prototype.toISOString = function() {
+  return this._date.<span class="apidocCodeKeywordSpan">toISOString</span>();
+};
+
+CronDate.prototype.toJSON = function() {
+  return this._date.toJSON();
+};
+
+CronDate.prototype.setDate = function(d) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.toJSON" id="apidoc.element.cron-parser.date.prototype.toJSON">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>toJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJSON = function () {
+  return this._date.toJSON();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+CronDate.prototype.toISOString = function() {
+  return this._date.toISOString();
+};
+
+CronDate.prototype.toJSON = function() {
+  return this._date.<span class="apidocCodeKeywordSpan">toJSON</span>();
+};
+
+CronDate.prototype.setDate = function(d) {
+  return this._date.date(d);
+};
+
+CronDate.prototype.setFullYear = function(y) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.date.prototype.toString" id="apidoc.element.cron-parser.date.prototype.toString">
+        function <span class="apidocSignatureSpan">cron-parser.date.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+  return this._date.toString();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+var parser = require(&#x27;cron-parser&#x27;);
+
+try {
+  var interval = parser.parseExpression(&#x27;*/2 * * * *&#x27;);
+
+  console.log(&#x27;Date: &#x27;, interval.next().<span class="apidocCodeKeywordSpan">toString</span>()); // Sat Dec 29 2012 00:
+42:00 GMT+0200 (EET)
+  console.log(&#x27;Date: &#x27;, interval.next().toString()); // Sat Dec 29 2012 00:44:00 GMT+0200 (EET)
+
+  console.log(&#x27;Date: &#x27;, interval.prev().toString()); // Sat Dec 29 2012 00:42:00 GMT+0200 (EET)
+  console.log(&#x27;Date: &#x27;, interval.prev().toString()); // Sat Dec 29 2012 00:40:00 GMT+0200 (EET)
+} catch (err) {
+  console.log(&#x27;Error: &#x27; + err.message);
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cron-parser.expression" id="apidoc.module.cron-parser.expression">module cron-parser.expression</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.expression.expression" id="apidoc.element.cron-parser.expression.expression">
+        function <span class="apidocSignatureSpan">cron-parser.</span>expression
+        <span class="apidocSignatureSpan">(fields, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CronExpression(fields, options) {
+  this._options = options;
+  this._tz = options.tz;
+  this._currentDate = new CronDate(options.currentDate, this._tz);
+  this._startDate = options.startDate ? new CronDate(options.startDate, this._tz) : null;
+  this._endDate = options.endDate ? new CronDate(options.endDate, this._tz) : null;
+  this._fields = {};
+  this._isIterator = options.iterator || false;
+  this._hasIterated = false;
+  this._utc = options.utc || false;
+
+  // Map fields
+  for (var i = 0, c = CronExpression.map.length; i &#x3c; c; i++) {
+    var key = CronExpression.map[i];
+    this._fields[key] = fields[i];
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.expression._parseField" id="apidoc.element.cron-parser.expression._parseField">
+        function <span class="apidocSignatureSpan">cron-parser.expression.</span>_parseField
+        <span class="apidocSignatureSpan">(field, value, constraints)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _parseField(field, value, constraints) {
+  // Replace aliases
+  switch (field) {
+    case &#x27;month&#x27;:
+    case &#x27;dayOfWeek&#x27;:
+      var aliases = CronExpression.aliases[field];
+
+      value = value.replace(/[a-z]{1,3}/gi, function(match) {
+        match = match.toLowerCase();
+
+        if (typeof aliases[match] !== undefined) {
+          return aliases[match];
+        } else {
+          throw new Error(&#x27;Cannot resolve alias &#x22;&#x27; + match + &#x27;&#x22;&#x27;)
+        }
+      });
+      break;
+  }
+
+  // Check for valid characters.
+  if (!(/^[\d|/|*|\-|,]+$/.test(value))) {
+    throw new Error(&#x27;Invalid characters, got value: &#x27; + value)
+  }
+
+  // Replace &#x27;*&#x27;
+  if (value.indexOf(&#x27;*&#x27;) !== -1) {
+    value = value.replace(/\*/g, constraints.join(&#x27;-&#x27;));
+  }
+
+  //
+  // Inline parsing functions
+  //
+  // Parser path:
+  //  - parseSequence
+  //    - parseRepeat
+  //      - parseRange
+
+<span class="apidocCodeCommentSpan">  /**
+   * Parse sequence
+   *
+   * @param {String} val
+   * @return {Array}
+   * @private
+   */
+</span>  function parseSequence (val) {
+    var stack = [];
+
+    function handleResult (result) {
+      var max = stack.length &#x3e; 0 ? Math.max.apply(Math, stack) : -1;
+
+      if (result instanceof Array) { // Make sequence linear
+        for (var i = 0, c = result.length; i &#x3c; c; i++) {
+          var value = result[i];
+
+          // Check constraints
+          if (value &#x3c; constraints[0] || value &#x3e; constraints[1]) {
+            throw new Error(
+                &#x27;Constraint error, got value &#x27; + value + &#x27; expected range &#x27; +
+                constraints[0] + &#x27;-&#x27; + constraints[1]
+            );
+          }
+
+          if (value &#x3e; max) {
+            stack.push(value);
+          }
+
+          max = Math.max.apply(Math, stack);
+        }
+      } else { // Scalar value
+        result = +result;
+
+        // Check constraints
+        if (result &#x3c; constraints[0] || result &#x3e; constraints[1]) {
+          throw new Error(
+            &#x27;Constraint error, got value &#x27; + result + &#x27; expected range &#x27; +
+            constraints[0] + &#x27;-&#x27; + constraints[1]
+          );
+        }
+
+        if (field == &#x27;dayOfWeek&#x27;) {
+          result = result % 7;
+        }
+
+        stack.push(result);
+      }
+    }
+
+    var atoms = val.split(&#x27;,&#x27;);
+    if (atoms.length &#x3e; 1) {
+      if (field !== &#x27;dayOfWeek&#x27;) {
+        var pattern = /\D/g;
+        atoms.sort(function (a, b) {
+          return parseInt(a.replace(pattern, &#x27;&#x27;), 10) - parseInt(b.replace(pattern, &#x27;&#x27;), 10);
+        });
+      }
+
+      for (var i = 0, c = atoms.length; i &#x3c; c; i++) {
+        handleResult(parseRepeat(atoms[i]));
+      }
+    } else {
+      handleResult(parseRepeat(val));
+    }
+
+    return stack;
+  }
+
+  /**
+   * Parse repetition interval
+   *
+   * @param {String} val
+   * @return {Array}
+   */
+  function parseRepeat (val) {
+    var repeatInterval = 1;
+    var atoms = val.split(&#x27;/&#x27;);
+
+    if (atoms.length &#x3e; 1) {
+      return parseRange(atoms[0], atoms[atoms.length - 1]);
+    }
+
+    return parseRange(val, repeatInterval);
+  }
+
+  /**
+   * Parse range
+   *
+   * @param {String} val
+   * @param {Number} repeatInterval Repetition interval
+   * @return {Array}
+   * @private
+   */
+  function parseRange (val, repeatInterval) {
+    var stack = [];
+    var atoms = val.split(&#x27;-&#x27;);
+
+    if (atoms.length &#x3e; 1 ) {
+      // Invalid range, return value
+      if (atoms.length &#x3c; 2 || !atoms[0].length) {
+        return +val;
+      }
+
+      // Validate range
+      var min = +atoms[0];
+      var max = +atoms[1];
+
+      if (safeIsNaN(min) || safeIsNaN(max) ||
+          min &#x3c; constraints[0] || max &#x3e; constraints[1]) {
+        throw new Error(
+          &#x27;Constraint error, got range &#x27; +
+          min + &#x27;-&#x27; + max +
+          &#x27; expected range &#x27; +
+          constraints[0] + &#x27;-&#x27; + constraints[1]
+        );
+      } else if (min &#x3e;= max) {
+        throw new Error(&#x27;Invalid range: &#x27; + val);
+      }
+
+      // Create range
+      var repeatIndex = +repeatInterval;
+
+      if (safeIsNaN(repeatIndex) || repeatIndex &#x3c;= 0) {
+        throw new Error(&#x27;Constraint error, cannot repeat at every &#x27; + repeatIndex + &#x27; time.&#x27;);
+      }
+
+      for (var index = min, count = max; index &#x3c;= count; index++) {
+        if ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    // Resolve fields
+    var start = (CronExpression.map.length - atoms.length);
+    for (var i = 0, c = CronExpression.map.length; i &#x3c; c; ++i) {
+var field = CronExpression.map[i]; // Field name
+var value = atoms[atoms.length &#x3e; c ? i : i - start]; // Field value
+
+if (i &#x3c; start || !value) {
+  fields.push(CronExpression.<span class="apidocCodeKeywordSpan">_parseField</span>(
+    field,
+    CronExpression.parseDefaults[i],
+    CronExpression.constraints[i])
+  );
+} else { // Use default value
+  fields.push(CronExpression._parseField(
+    field,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.expression.parse" id="apidoc.element.cron-parser.expression.parse">
+        function <span class="apidocSignatureSpan">cron-parser.expression.</span>parse
+        <span class="apidocSignatureSpan">(expression, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parse(expression, options, callback) {
+  var self = this;
+  if (typeof options === &#x27;function&#x27;) {
+    callback = options;
+    options = {};
+  }
+
+  function parse (expression, options) {
+    if (!options) {
+      options = {};
+    }
+
+    if (typeof options.currentDate === &#x27;undefined&#x27;) {
+      options.currentDate = new CronDate(undefined, self._tz);
+    }
+
+    // Is input expression predefined?
+    if (CronExpression.predefined[expression]) {
+      expression = CronExpression.predefined[expression];
+    }
+
+    // Split fields
+    var fields = [];
+    var atoms = (expression + &#x27;&#x27;).trim().split(/\s+/);
+
+    // Resolve fields
+    var start = (CronExpression.map.length - atoms.length);
+    for (var i = 0, c = CronExpression.map.length; i &#x3c; c; ++i) {
+      var field = CronExpression.map[i]; // Field name
+      var value = atoms[atoms.length &#x3e; c ? i : i - start]; // Field value
+
+      if (i &#x3c; start || !value) {
+        fields.push(CronExpression._parseField(
+          field,
+          CronExpression.parseDefaults[i],
+          CronExpression.constraints[i])
+        );
+      } else { // Use default value
+        fields.push(CronExpression._parseField(
+          field,
+          value,
+          CronExpression.constraints[i])
+        );
+      }
+    }
+
+    return new CronExpression(fields, options);
+  }
+
+  return parse(expression, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var options = {
+  currentDate: &#x27;2016-03-27 00:00:01&#x27;,
+  tz: &#x27;Europe/Athens&#x27;
+};
+
+try {
+  var interval = CronExpression.<span class="apidocCodeKeywordSpan">parse</span>(&#x27;0 * * * *&#x27;, options);
+
+  console.log(&#x27;Date: &#x27;, interval.next().toString()); // Date:  Sun Mar 27 2016 01:00:00 GMT+0200
+  console.log(&#x27;Date: &#x27;, interval.next().toString()); // Date:  Sun Mar 27 2016 02:00:00 GMT+0200
+  console.log(&#x27;Date: &#x27;, interval.next().toString()); // Date:  Sun Mar 27 2016 04:00:00 GMT+0300 (Notice DST transition
+)
+} catch (err) {
+  console.log(&#x27;Error: &#x27; + err.message);
+}
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cron-parser.expression.prototype" id="apidoc.module.cron-parser.expression.prototype">module cron-parser.expression.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.expression.prototype._applyTimezoneShift" id="apidoc.element.cron-parser.expression.prototype._applyTimezoneShift">
+        function <span class="apidocSignatureSpan">cron-parser.expression.prototype.</span>_applyTimezoneShift
+        <span class="apidocSignatureSpan">(currentDate, method)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_applyTimezoneShift = function (currentDate, method) {
+  var previousHour = currentDate.getHours();
+  currentDate[method]();
+  var currentHour = currentDate.getHours();
+  var diff = currentHour - previousHour;
+  if (diff === 2) {
+    // Starting DST
+    if (this._fields.hour.length !== 24) {
+      // Hour is specified
+      this._dstStart = currentHour;
+    }
+  } else if ((diff === 0) &#x26;&#x26;
+             (currentDate.getMinutes() === 0) &#x26;&#x26;
+             (currentDate.getSeconds() === 0)) {
+    // Ending DST
+    if (this._fields.hour.length !== 24) {
+      // Hour is specified
+      this._dstEnd = currentHour;
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  continue;
+}
+
+// Match hour
+if (!matchSchedule(currentHour, this._fields.hour)) {
+  if (this._dstStart !== currentHour) {
+    this._dstStart = null;
+    this.<span class="apidocCodeKeywordSpan">_applyTimezoneShift</span>(currentDate, dateMathVerb + &#x27;Hour&#x27;);
+    continue;
+  } else if (!matchSchedule(currentHour - 1, this._fields.hour)) {
+    currentDate[dateMathVerb + &#x27;Hour&#x27;]();
+    continue;
+  }
+} else if (this._dstEnd === currentHour) {
+  if (!reverse) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.expression.prototype._findSchedule" id="apidoc.element.cron-parser.expression.prototype._findSchedule">
+        function <span class="apidocSignatureSpan">cron-parser.expression.prototype.</span>_findSchedule
+        <span class="apidocSignatureSpan">(reverse)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _findSchedule(reverse) {
+
+<span class="apidocCodeCommentSpan">  /**
+   * Match field value
+   *
+   * @param {String} value
+   * @param {Array} sequence
+   * @return {Boolean}
+   * @private
+   */
+</span>  function matchSchedule (value, sequence) {
+    for (var i = 0, c = sequence.length; i &#x3c; c; i++) {
+      if (sequence[i] &#x3e;= value) {
+        return sequence[i] === value;
+      }
+    }
+
+    return sequence[0] === value;
+  }
+
+  /**
+   * Detect if input range fully matches constraint bounds
+   * @param {Array} range Input range
+   * @param {Array} constraints Input constraints
+   * @returns {Boolean}
+   * @private
+   */
+  function isWildcardRange (range, constraints) {
+    if (range instanceof Array &#x26;&#x26; !range.length) {
+      return false;
+    }
+
+    if (constraints.length !== 2) {
+      return false;
+    }
+
+    return range.length === (constraints[1] - (constraints[0] &#x3c; 1 ? - 1 : 0));
+  }
+
+  // Whether to use backwards directionality when searching
+  reverse = reverse || false;
+  var dateMathVerb = reverse ? &#x27;subtract&#x27; : &#x27;add&#x27;;
+
+  var method = function(name) {
+    return !this._utc ? name : (&#x27;getUTC&#x27; + name.slice(3));
+  }.bind(this);
+
+  var currentDate = new CronDate(this._currentDate, this._tz);
+  var startDate = this._startDate;
+  var endDate = this._endDate;
+
+  // Find matching schedule
+  var initial_ts = currentDate.getTime();
+  while (true) {
+    // Validate timespan
+    if (reverse) {
+      if (startDate &#x26;&#x26; (currentDate.getTime() - startDate.getTime() &#x3c; 0)) {
+        throw new Error(&#x27;Out of the timespan range&#x27;);
+      }
+    } else {
+      if (endDate &#x26;&#x26; (endDate.getTime() - currentDate.getTime()) &#x3c; 0) {
+        throw new Error(&#x27;Out of the timespan range&#x27;);
+      }
+    }
+
+    // Day of month and week matching:
+    //
+    // &#x22;The day of a command&#x27;s execution can be specified by two fields --
+    // day of month, and day of week.  If  both	 fields	 are  restricted  (ie,
+    // aren&#x27;t  *),  the command will be run when either field matches the cur-
+    // rent time.  For example, &#x22;30 4 1,15 * 5&#x22; would cause a command to be
+    // run at 4:30 am on the  1st and 15th of each month, plus every Friday.&#x22;
+    //
+    // http://unixhelp.ed.ac.uk/CGI/man-cgi?crontab+5
+    //
+
+    var dayOfMonthMatch = matchSchedule(currentDate[method(&#x27;getDate&#x27;)](), this._fields.dayOfMonth);
+    var dayOfWeekMatch = matchSchedule(currentDate[method(&#x27;getDay&#x27;)](), this._fields.dayOfWeek);
+
+    var isDayOfMonthWildcardMatch = isWildcardRange(this._fields.dayOfMonth, CronExpression.constraints[3]);
+    var isMonthWildcardMatch = isWildcardRange(this._fields.month, CronExpression.constraints[4]);
+    var isDayOfWeekWildcardMatch = isWildcardRange(this._fields.dayOfWeek, CronExpression.constraints[5]);
+
+    var currentHour = currentDate[method(&#x27;getHours&#x27;)]();
+
+    // Validate days in month if explicit value is given
+    if (!isMonthWildcardMatch) {
+      var currentYear = currentDate[method(&#x27;getFullYear&#x27;)]();
+      var currentMonth = currentDate[method(&#x27;getMonth&#x27;)]() + 1;
+      var previousMonth = currentMonth === 1 ? 11 : currentMonth - 1;
+      var daysInPreviousMonth = CronExpression.daysInMonth[previousMonth - 1];
+      var daysOfMontRangeMax = this._fields.dayOfMonth[this._fields.dayOfMonth.length - 1];
+
+      var _daysInPreviousMonth = daysInPreviousMonth;
+      var _daysOfMontRangeMax = daysOfMontRangeMax;
+
+      // Handle leap year
+      var isLeap = !((currentYear % 4) || (!(currentYear % 100) &#x26;&#x26; (currentYear % 400)));
+      if (isLeap) {
+        _daysInPreviousMonth = 29;
+        _daysOfMontRangeMax = 29;
+      }
+
+      if (this._fields.month[0] === previousMonth &#x26;&#x26; _daysInPreviousMonth &#x3c; _daysOfMontRangeMax) {
+        throw new Error(&#x27;Invalid explicit day of month definition&#x27;);
+      }
+    }
+
+    // Add or subtract day if select day not match with month (according to calendar)
+    if (!dayOfMonthMatch &#x26;&#x26; !dayOfWeekMatch) {
+      currentDate[dateMathVerb + &#x27;Day&#x27;]();
+      continue;
+    }
+
+    // Add or subtract day if not day of month is set (and no match) and day of week is wildcard
+    if (!isDayOfMonthWildcardMatch &#x26;&#x26; isDayOfWeekWildcardMatch &#x26;&#x26; !dayOfMonthMatch) {
+      cur ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+ * Find next suitable date
+ *
+ * @public
+ * @return {CronDate|Object}
+ */
+CronExpression.prototype.next = function next () {
+var schedule = this.<span class="apidocCodeKeywordSpan">_findSchedule</span>();
+
+// Try to return ES6 compatible iterator
+if (this._isIterator) {
+  return {
+    value: schedule,
+    done: !this.hasNext()
+  };
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.expression.prototype.hasNext" id="apidoc.element.cron-parser.expression.prototype.hasNext">
+        function <span class="apidocSignatureSpan">cron-parser.expression.prototype.</span>hasNext
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hasNext = function () {
+  var current = this._currentDate;
+  var hasIterated = this._hasIterated;
+
+  try {
+    this._findSchedule();
+    return true;
+  } catch (err) {
+    return false;
+  } finally {
+    this._currentDate = current;
+    this._hasIterated = hasIterated;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+CronExpression.prototype.next = function next () {
+  var schedule = this._findSchedule();
+
+  // Try to return ES6 compatible iterator
+  if (this._isIterator) {
+    return {
+      value: schedule,
+      done: !this.<span class="apidocCodeKeywordSpan">hasNext</span>()
+    };
+  }
+
+  return schedule;
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.expression.prototype.hasPrev" id="apidoc.element.cron-parser.expression.prototype.hasPrev">
+        function <span class="apidocSignatureSpan">cron-parser.expression.prototype.</span>hasPrev
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hasPrev = function () {
+  var current = this._currentDate;
+  var hasIterated = this._hasIterated;
+
+  try {
+    this._findSchedule(true);
+    return true;
+  } catch (err) {
+    return false;
+  } finally {
+    this._currentDate = current;
+    this._hasIterated = hasIterated;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+CronExpression.prototype.prev = function prev () {
+  var schedule = this._findSchedule(true);
+
+  // Try to return ES6 compatible iterator
+  if (this._isIterator) {
+    return {
+      value: schedule,
+      done: !this.<span class="apidocCodeKeywordSpan">hasPrev</span>()
+    };
+  }
+
+  return schedule;
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.expression.prototype.iterate" id="apidoc.element.cron-parser.expression.prototype.iterate">
+        function <span class="apidocSignatureSpan">cron-parser.expression.prototype.</span>iterate
+        <span class="apidocSignatureSpan">(steps, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function iterate(steps, callback) {
+  var dates = [];
+
+  if (steps &#x3e;= 0) {
+    for (var i = 0, c = steps; i &#x3c; c; i++) {
+      try {
+        var item = this.next();
+        dates.push(item);
+
+        // Fire the callback
+        if (callback) {
+          callback(item, i);
+        }
+      } catch (err) {
+        break;
+      }
+    }
+  } else {
+    for (var i = 0, c = steps; i &#x3e; c; i--) {
+      try {
+        var item = this.prev();
+        dates.push(item);
+
+        // Fire the callback
+        if (callback) {
+          callback(item, i);
+        }
+      } catch (err) {
+        break;
+      }
+    }
+  }
+
+  return dates;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.expression.prototype.next" id="apidoc.element.cron-parser.expression.prototype.next">
+        function <span class="apidocSignatureSpan">cron-parser.expression.prototype.</span>next
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function next() {
+  var schedule = this._findSchedule();
+
+  // Try to return ES6 compatible iterator
+  if (this._isIterator) {
+    return {
+      value: schedule,
+      done: !this.hasNext()
+    };
+  }
+
+  return schedule;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+var parser = require(&#x27;cron-parser&#x27;);
+
+try {
+  var interval = parser.parseExpression(&#x27;*/2 * * * *&#x27;);
+
+  console.log(&#x27;Date: &#x27;, interval.<span class="apidocCodeKeywordSpan">next</span>().toString()); // Sat Dec 29 2012 00:
+42:00 GMT+0200 (EET)
+  console.log(&#x27;Date: &#x27;, interval.next().toString()); // Sat Dec 29 2012 00:44:00 GMT+0200 (EET)
+
+  console.log(&#x27;Date: &#x27;, interval.prev().toString()); // Sat Dec 29 2012 00:42:00 GMT+0200 (EET)
+  console.log(&#x27;Date: &#x27;, interval.prev().toString()); // Sat Dec 29 2012 00:40:00 GMT+0200 (EET)
+} catch (err) {
+  console.log(&#x27;Error: &#x27; + err.message);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.expression.prototype.prev" id="apidoc.element.cron-parser.expression.prototype.prev">
+        function <span class="apidocSignatureSpan">cron-parser.expression.prototype.</span>prev
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function prev() {
+  var schedule = this._findSchedule(true);
+
+  // Try to return ES6 compatible iterator
+  if (this._isIterator) {
+    return {
+      value: schedule,
+      done: !this.hasPrev()
+    };
+  }
+
+  return schedule;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+try {
+  var interval = parser.parseExpression(&#x27;*/2 * * * *&#x27;);
+
+  console.log(&#x27;Date: &#x27;, interval.next().toString()); // Sat Dec 29 2012 00:42:00 GMT+0200 (EET)
+  console.log(&#x27;Date: &#x27;, interval.next().toString()); // Sat Dec 29 2012 00:44:00 GMT+0200 (EET)
+
+  console.log(&#x27;Date: &#x27;, interval.<span class="apidocCodeKeywordSpan">prev</span>().toString()); // Sat Dec 29 2012 00:
+42:00 GMT+0200 (EET)
+  console.log(&#x27;Date: &#x27;, interval.prev().toString()); // Sat Dec 29 2012 00:40:00 GMT+0200 (EET)
+} catch (err) {
+  console.log(&#x27;Error: &#x27; + err.message);
+}
+
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cron-parser.expression.prototype.reset" id="apidoc.element.cron-parser.expression.prototype.reset">
+        function <span class="apidocSignatureSpan">cron-parser.expression.prototype.</span>reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function reset() {
+  this._currentDate = new CronDate(this._options.currentDate);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
